@@ -1,5 +1,5 @@
 # Nombre del cluster
-$clusterName = "axt-dev-ecs-cluster-1"
+$clusterName = "CLUSTERNAME"
 
 # Obtener los ARN de los servicios
 $serviceArns = aws ecs list-services --cluster $clusterName --query "serviceArns[]" --output text
@@ -12,3 +12,4 @@ foreach ($serviceArn in $services) {
     Write-Host "Actualizando servicio: $serviceArn"
     #aws ecs update-service --cluster $clusterName --service $serviceArn --desired-count 0
 }
+
